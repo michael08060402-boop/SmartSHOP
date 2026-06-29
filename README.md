@@ -65,18 +65,5 @@ Aplicación web de comercio electrónico lista para producción, desarrollada pa
 
 **Re-login obligatorio al abrir el navegador** — las sesiones JWT normalmente persisten. Se guarda un flag `ss_active` en `sessionStorage` (que se borra al cerrar el navegador) solo tras un login exitoso. Un componente `SessionGuard` lo verifica en cada carga de página y ejecuta `signOut` si no existe.
 
----
 
-## Esquema de Base de Datos
-
-```
-User       — id, nombre, email, rol, dirección, lat, lng, referencia, teléfono
-Product    — id, nombre, precio, precioOriginal, stock, categoría, imágenes[], badge, activo
-Order      — id, userId, items[], total, envío, estado, metodoPago, dirección, teléfono
-OrderItem  — orderId, productId, nombre, imagen, precio, cantidad
-Review     — productId, userId, calificación, comentario (único por usuario por producto)
-Setting    — almacén clave/valor para configuración del sitio
-```
-
----
 
